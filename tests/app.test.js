@@ -22,6 +22,7 @@ describe("Prueba de la ruta principal", () => {
         expect(response.statusCode).toBe(200);
 
         expect(response.body.status).toBe("OK");
+        expect(response.body.application).toBe("Proyecto DevOps");
 
     });
 

@@ -7,11 +7,14 @@ app.get("/", (req, res) => {
 });
 
 app.get("/health", (req, res) => {
+
     res.status(200).json({
         status: "OK",
         application: "Proyecto DevOps",
-        version: "1.0"
+        version: "1.0",
+        environment: process.env.NODE_ENV || "development"
     });
+
 });
 
 const PORT = 3000;
