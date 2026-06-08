@@ -26,4 +26,15 @@ describe("Prueba de la ruta principal", () => {
 
     });
 
+    test("API info debe responder correctamente", async () => {
+
+        const response = await request(app).get("/api/info");
+
+        expect(response.statusCode).toBe(200);
+
+        expect(response.body.proyecto)
+            .toBe("Proyecto Final DevOps");
+
+    });
+
 });
