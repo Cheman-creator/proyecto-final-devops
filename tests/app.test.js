@@ -15,4 +15,14 @@ describe("Prueba de la ruta principal", () => {
 
     });
 
+    test("Health check debe responder correctamente", async () => {
+
+        const response = await request(app).get("/health");
+
+        expect(response.statusCode).toBe(200);
+
+        expect(response.body.status).toBe("OK");
+
+    });
+
 });
